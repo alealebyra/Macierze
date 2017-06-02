@@ -1,0 +1,16 @@
+macierzki: main_m.o macierze.o wektory.o
+
+	g++ main_m.o macierze.o wektory.o -o wektorek
+
+main_m.o: main_m.cpp
+
+	g++ -Wall -c main_m.cpp
+
+macierze.o: macierze.cpp macierze.h
+	g++ -Wall -c macierze.cpp
+wektory.o: wektory.cpp wektory.h
+
+	g++ -Wall -c wektory.cpp
+clean:
+	
+rm -f wektorek main_w.o wektory.o
